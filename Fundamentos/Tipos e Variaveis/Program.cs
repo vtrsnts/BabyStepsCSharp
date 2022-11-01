@@ -4,21 +4,6 @@ namespace Tipos_e_Variaveis
 {
     public class Program
     {
-        enum Mes
-        {
-            Janeiro =1,
-            Fevereiro,
-            Marco,
-            Abril,
-            Maio,
-            Junho,
-            Julho,
-            Agosto,
-            Setembro,
-            Outubro,
-            Novembro,
-            Dezembro
-        }
         public static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -39,23 +24,23 @@ namespace Tipos_e_Variaveis
             Console.ReadLine();
             Console.WriteLine("Tipos de valor simples:");
             Console.WriteLine("    Integral, char, floating-point, Boolean");
-            
+
             int idade = 10;
             char genero = 'M';
             decimal preco = 10.2m;
-            bool stAtivo = true;           
-           
+            bool stAtivo = true;
+
             Console.ReadLine();
-                       
+
             Console.WriteLine("Tipos de valor enum:");
             Console.WriteLine("    São variaveis constantes representadas por um enumerável");
 
             string mes = Mes.Janeiro.ToString();
-           
+
             Console.ReadLine();
             Console.WriteLine("Tipos de valor struct:");
-            Console.WriteLine("    São semelhantes a classe de objetos, porém existem as seguintes diferenças:");     
-            Console.WriteLine("    Não há herança em struct");            
+            Console.WriteLine("    São semelhantes a classe de objetos, porém existem as seguintes diferenças:");
+            Console.WriteLine("    Não há herança em struct");
             Console.WriteLine("    É passada por cópia e não referência");
             Console.ReadLine();
             Console.WriteLine("Tipos de valor nullable:");
@@ -81,6 +66,21 @@ namespace Tipos_e_Variaveis
             Console.ReadLine();
             Console.WriteLine("Tipo dynamic:");
             Console.WriteLine("     É um objeto que não há validação de seu tipo penas em runtime é resolvido o tipo, atributos, métodos, operadores.");
-        }
-}
+        }      
+    }
+    enum Mes
+    {
+        Janeiro = 1,
+        Fevereiro,
+        Marco,
+        Abril,
+        Maio,
+        Junho,
+        Julho,
+        Agosto,
+        Setembro,
+        Outubro,
+        Novembro,
+        Dezembro
+    }
 }
