@@ -140,7 +140,7 @@ namespace Tipos
             }
 
             //Pontos importantes relacionado a Stack e Heap
-            //  Quando usamos tipos de valores e criamos uma nova variável utilizando uma existente é passado ma cópia da variável ou seja podemos alterar os valores sem alterar o valor origem
+            //  Quando usamos tipos de valores e criamos uma nova variável utilizando uma existente é passado uma cópia da variável ou seja podemos alterar os valores sem alterar o valor origem
             //  Quando usamos tipos de referência e criamos uma nova variável assumindo um objeto existente é passado a referência do objeto ou seja tudo que alterarmos nesse objeto ra refletir em sua origem.
             
             //Tipos de Valores

@@ -13,7 +13,6 @@ namespace Tipos_e_Variaveis.Classe
         public Aluno(DateTime dataNascimento)
         {
             Aniversario = dataNascimento;
-
         }
         public int Idade { get; private set; }
 
@@ -29,6 +28,6 @@ namespace Tipos_e_Variaveis.Classe
         public void Hello(string msg)
         {
             Console.WriteLine(@$"Olá, sou a classe Aluno! msg -> {msg}");
-        }
+        }       
     }
 }
