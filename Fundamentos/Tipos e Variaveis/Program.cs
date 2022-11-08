@@ -152,9 +152,27 @@ namespace Tipos
             Pessoa novaPessoa = pessoa; // criamos uma Referência de pessoa
             novaPessoa.Nome = "John No Arm"; // alteramos o nome
             string nomeNovo = pessoa.Nome; // fazemos a leitura da referência origem e como mágica vimos que alterou para John No Arm também
-            //isso ocorre exatamente por ser um tipo de referência ou seja o ponteiro que é armazenado na Stack do objeto em questão nada mais é do que o mesmo identificador do objeto origem armazenado na Heap. 
+                                           //isso ocorre exatamente por ser um tipo de referência ou seja o ponteiro que é armazenado na Stack do objeto em questão nada mais é do que o mesmo identificador do objeto origem armazenado na Heap. 
 
-            
+            //Simulação de Stack e Heap
+            //Vamos simular o comportamento da memória 
+
+            int qtdProduto = 25;// nesse momento a alocação de armazenamento na Stack contendo o seu valor;
+            new Pessoa();// nesse momento temos alocação de memória Heap com os atributos em default. Fator importante é que não temos na stack um ponteiro para esse endereço na Heap ou seja temos uma informação em memória sem referência.
+            Pessoa p; //Nesse momento temos alocação de armazenamento na Stack mas não há referência, não há um ponteiro na Heap. 
+            p= new Pessoa(); // Nesse momento estamos criando uma alocação de memória Heap com os atributos em default e atribuindo sua referência a memória Stack na variável p.
+            p.Nome = "Jarvis"; // Nesse momento estamos manipulando a informação na memória Heap.
+
+            //Criando variáveis a partir de variáveis existentes 
+            int qtdProdutoTotal = qtdProduto; // nesse momento temos uma cópia da variável de valor int qtdProduto para a variável qtdProdutoTotal
+            qtdProdutoTotal = 8;// nesse momento estamos atribuindo o valor 8 para qtdProdutoTotal e qtdProduto não é afetado mantendo seu valor inicial de 25
+
+            Pessoa pAdmin = p; // nesse momento estamos criando uma variável pAdmin e adicionando a referência de p ou seja na memória Stack teremos o mesmo endereço para a memória Heap.
+            pAdmin.Nome = "Jarvis Evolution"; // nesse momento estamos atribuindo um novo valor nome para a Heap por termos na Stack duas variáveis apontando para a mesma Heap o valor será atualizado para as duas variáveis.
+
+            p = null;// nesse momento estamos apagando o identificador (ponteiro) Heap  existente na memória Stack! Memória Heap continua com a informação da instância gerada!  
+            pAdmin.Nome ="Jarvis";// Mesmo atribuindo nulo a variável p não afeta a variavel pAdimn pois a mesma contem o ponteiro para memória Heap sendo assim continua com as informações da instância.
+ 
         }
 
         //Método com uso de interface possibilita a utilização por todas as classes que tem a interface IPessoa com essa estrutura possibilitamos o desacoplamento de código.
