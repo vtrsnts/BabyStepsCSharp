@@ -2,6 +2,7 @@
 using Tipos_e_Variaveis.Classe;
 using Tipos_e_Variaveis.Enum;
 using Tipos_e_Variaveis.Interface;
+using Tipos_e_Variaveis.Static;
 using Tipos_e_Variaveis.Struct;
 
 namespace Tipos
@@ -139,10 +140,24 @@ namespace Tipos
                 Console.WriteLine(erro.Message); //exibindo a mensagem do erro    
             }
 
+            //Tipo static:
+            // Tem objetivo de expor métodos, propriedades sem a necessidade de instânciar a classe.
+            // O acesso é feito de forma direta na escrita da classe. 
+            ValidadorPessoa.ValidarCPF("100.200.300-88");// utilizamos uma classe estática para realizar atividades que não precisam de uma instância.
+            ValidadorTexto.Validar("Olá");// uma classe não estatica pode ter métodos e propriedades estáticas - Validar é um método estático da classe ValidadorTexto
+            ValidadorTexto._texto = "teste"; // variável estática _texto da classe ValidadorTexto
+            ValidadorTexto validadorTexto123 = new ValidadorTexto(); // geramos uma instância  da classe ValidadorTexto
+            validadorTexto123.Nome = "John"; // manipulamos a propriedade Nome do objeto validadorTexto123
+            validadorTexto123.ValidarNome(); // fazemos a chamada do método ValidarNome do objeto validadorTexto123
+            validadorTexto123 = new ValidadorTexto(); // declaramos uma nova instância para objeto validadorTexto123 
+
+            string texto = ValidadorTexto._texto; // vimos que validadorTexto123 alterou a variável estática _texto da classe ValidadorTexto mesmo não tendo mais o objeto que alterou.
+
+
             //Pontos importantes relacionado a Stack e Heap
             //  Quando usamos tipos de valores e criamos uma nova variável utilizando uma existente é passado uma cópia da variável ou seja podemos alterar os valores sem alterar o valor origem
             //  Quando usamos tipos de referência e criamos uma nova variável assumindo um objeto existente é passado a referência do objeto ou seja tudo que alterarmos nesse objeto ra refletir em sua origem.
-            
+
             //Tipos de Valores
             int subtotal = 10; // atribuindo 10 a uma variável do tipo de valores 
             int total = subtotal; // atribuindo uma cópia da variável;
@@ -172,7 +187,10 @@ namespace Tipos
 
             p = null;// nesse momento estamos apagando o identificador (ponteiro) Heap  existente na memória Stack! Memória Heap continua com a informação da instância gerada!  
             pAdmin.Nome ="Jarvis";// Mesmo atribuindo nulo a variável p não afeta a variavel pAdimn pois a mesma contem o ponteiro para memória Heap sendo assim continua com as informações da instância.
- 
+
+
+          
+
         }
 
         //Método com uso de interface possibilita a utilização por todas as classes que tem a interface IPessoa com essa estrutura possibilitamos o desacoplamento de código.
