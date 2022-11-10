@@ -8,7 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Polimorfismo\" />
+    <Folder Include="Polimorfismo\Heranca\" />
+    <Folder Include="Polimorfismo\Sobrecarga\" />
   </ItemGroup>
 
 </Project>
