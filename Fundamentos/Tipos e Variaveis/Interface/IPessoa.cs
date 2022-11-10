@@ -15,7 +15,7 @@ namespace Tipos_e_Variaveis.Interface
     internal interface IPessoa
     {
         // toda classe que implementar essa interface deverá ter o método "ComemorarAniversario" sem passagem de parâmetros e sem retorno;
-        public void ComemorarAniversario();
-        public void Hello(string msg);
+         void ComemorarAniversario();
+         void Hello(string msg);
     }
 }

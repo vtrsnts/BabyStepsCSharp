@@ -12,12 +12,12 @@ namespace Heranca.Multipla
     //Herança múltipla -> não há herança múltipla de classe no C# temos a possibilidade de criar estrutura que permita um comportamento de herança múltipla utilizando Interface. 
     public interface IProfessor
     {
-        public int Idade { get; set; }
-        public string Nome { get; set; }
+         int Idade { get; set; }
+         string Nome { get; set; }
     }
     public interface IDiretor 
     {
-        public void AvaliarProfessor();
+         void AvaliarProfessor();
     }
     public class ProfessorDoutor
     {
