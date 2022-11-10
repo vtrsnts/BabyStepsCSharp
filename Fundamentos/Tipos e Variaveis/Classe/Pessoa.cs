@@ -26,5 +26,9 @@ namespace Tipos_e_Variaveis.Classe
         {
             Console.WriteLine(@$"Olá, sou a classe Pessoa! msg -> {msg}");
         }
+        public void EnviarMSG(string msg)
+        {
+            Console.WriteLine(@$"Olá, sou a classe Pessoa! msg -> {msg}");
+        }
     }
 }

@@ -5,9 +5,9 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tipos e Variaveis", "Tipos e Variaveis\Tipos e Variaveis.csproj", "{C875E3D8-142B-4D93-AB95-3589918D29B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modificadores de Acesso", "Modificadores de Acesso\Modificadores de Acesso.csproj", "{F55CBCCE-DFAD-489E-BE2F-F4E54E419ED8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modificadores de Acesso", "Modificadores de Acesso\Modificadores de Acesso.csproj", "{F55CBCCE-DFAD-489E-BE2F-F4E54E419ED8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heranca", "Heranca\Heranca.csproj", "{8FF9C477-426F-4793-AC02-F59AD21EFB6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heranca e Polimorfismo", "Heranca\Heranca e Polimorfismo.csproj", "{8FF9C477-426F-4793-AC02-F59AD21EFB6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

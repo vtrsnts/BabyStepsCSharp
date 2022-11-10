@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Heranca.Hierarquica
+namespace Heranca_e_Polimorfismo.Heranca.Hierarquica
 {
     //Para facilitar a visualização as classes estão em um único arquivo lembrando que não é a maneira correta de gerar classes!! 
 

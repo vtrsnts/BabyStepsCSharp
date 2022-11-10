@@ -92,7 +92,7 @@ namespace Tipos
             pessoa.Idade = 20;
             pessoa.MesNascimento = Mes.Outubro;
             pessoa.DiaNascimento = 05;
-            
+           
             //Tipo de referência interface:
             //  Utilizado para definirmos contrato para uma classe ou struct
           
@@ -109,7 +109,7 @@ namespace Tipos
             //  Declaração de um ponteiro de forma externa através de uma assinatura de método.
             //  Muito utilizado quando precisamos passar o controle, responsabilidade de algo, para algo externo que a classe não tem conhecimento de como fazer.
             //  Uso bastante comum em aplicações que utilizam eventos, UserControls, onde temos o uso de componentes. 
-            ExemploDelegate exemploDelegatePessoa = pessoa.Hello;
+            ExemploDelegate exemploDelegatePessoa = pessoa.EnviarMSG;
             ExemploDelegate exemploDelegateAluno = aluno.Hello;
 
             exemploDelegatePessoa("Delegate para classe Pessoa");

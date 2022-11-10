@@ -1,5 +1,5 @@
 ﻿
-namespace Heranca
+namespace Heranca_e_Polimorfismo
 {
     //O código abaixo tem o entendimento do conceito abordado portanto não retrata as melhores práticas de desenvolvimento e sim do conceito em questão!
     internal class Program
@@ -16,15 +16,15 @@ namespace Heranca
             herancaSimplesProfessorDoutor.Idade = 30;// esse atributo pertence a classe base Professor
             herancaSimplesProfessorDoutor.Nome = "John";// esse atributo pertence a classe base Professor
             herancaSimplesProfessorDoutor.NomeDoutorado = "Segurança";// esse atributo pertence a classe ProfessorDoutor
-            
+
             //herança hierárquica -> ocorre quando uma classe base possui mais de uma classe derivada.
-            Heranca.Hierarquica.ProfessorDoutor herancaHierarquicaProfessorDoutor = new Hierarquica.ProfessorDoutor();
-            Heranca.Hierarquica.ProfessorOrientador herancaHierarquicaProfessorOrientador = new Hierarquica.ProfessorOrientador();
+            Heranca.Hierarquica.ProfessorDoutor herancaHierarquicaProfessorDoutor = new Heranca.Hierarquica.ProfessorDoutor();
+            Heranca.Hierarquica.ProfessorOrientador herancaHierarquicaProfessorOrientador = new Heranca.Hierarquica.ProfessorOrientador();
             //a classe base Heranca.Hierarquica.Professor é herdada nas duas classes Heranca.Hierarquica.ProfessorDoutor e Heranca.Hierarquica.ProfessorOrientador criando uma hierarquia.
-            
+
             //herança Multinível -> ocorre quando realizamos a herança de uma classe já derivada.
-            Heranca.Multinivel.ProfessorDoutor herancaMultinivelProfessorDoutor = new Multinivel.ProfessorDoutor();
-            Heranca.Multinivel.ProfessorOrientador herancaMultinivelProfessorOrientador = new Multinivel.ProfessorOrientador();
+            Heranca.Multinivel.ProfessorDoutor herancaMultinivelProfessorDoutor = new Heranca.Multinivel.ProfessorDoutor();
+            Heranca.Multinivel.ProfessorOrientador herancaMultinivelProfessorOrientador = new Heranca.Multinivel.ProfessorOrientador();
             //a classe Heranca.Multinivel.ProfessorDoutor é derivada da classe base Heranca.Multinivel.Professor
             //a classe Heranca.Multinivel.ProfessorOrientador é derivada da classe derivada Heranca.Multinivel.ProfessorDoutor que é derivada da classe base Heranca.Multinivel.Professor
 

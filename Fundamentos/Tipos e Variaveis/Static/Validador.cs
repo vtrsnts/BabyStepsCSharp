@@ -12,7 +12,7 @@ namespace Tipos_e_Variaveis.Static
     //Ao declaremos uma classe static todos o conteúdo da classe precisa ser static (métodos, propriedades) pois estamos impedindo a instância da classe e
     //não há como acessar o conteúdo de instância nesse cenário  
     public static class ValidadorPessoa
-    {
+    {      
         public static bool ValidarCPF(string cpf) 
         {
             //lógica aqui 
@@ -34,7 +34,8 @@ namespace Tipos_e_Variaveis.Static
         {
             _texto = @$"{texto} -> Validar";
             //lógica aqui
-            //ValidarNome(); //por não termos uma instância definida não conseguimos acessar os tipos de instância ValidarNome e Nome  
+            //ValidarNome();//por não termos uma instância definida não conseguimos acessar os tipos de instância ValidarNome e Nome  
+            //Nome = "Teste";
             return true;
         }
         public bool ValidarNome() 

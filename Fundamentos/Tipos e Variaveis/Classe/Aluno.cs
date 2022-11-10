@@ -27,7 +27,7 @@ namespace Tipos_e_Variaveis.Classe
         }
         public void Hello(string msg)
         {
-            Console.WriteLine(@$"Olá, sou a classe Aluno! msg -> {msg}");
+          string hello =  @$"Olá, sou a classe Aluno! msg -> {msg}";
         }       
     }
 }
