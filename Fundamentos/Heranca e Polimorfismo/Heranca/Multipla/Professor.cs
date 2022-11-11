@@ -32,7 +32,7 @@ namespace Heranca_e_Polimorfismo.Heranca.Multipla
 
         public void AvaliarProfessor()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

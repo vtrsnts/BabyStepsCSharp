@@ -1,15 +1,17 @@
 ﻿
+using Heranca_e_Polimorfismo.Polimorfismo.Heranca;
+
 namespace Heranca_e_Polimorfismo
 {
     //O código abaixo tem o entendimento do conceito abordado portanto não retrata as melhores práticas de desenvolvimento e sim do conceito em questão!
     internal class Program
     {
-       
+
         static void Main(string[] args)
         {
             //Herança -> permite que uma classe herde atributos,propriedades, métodos de uma classe já existente.
             //Objetivo de termos herança é facilitar e dinamizar o desenvolvimento possipilitando o reuso de classes.
-            
+
             //herança simples -> ocorre quando uma classe base é herdada para uma única classe derivada 
             Heranca.Simples.ProfessorDoutor herancaSimplesProfessorDoutor = new Heranca.Simples.ProfessorDoutor();
             //A variável herancaSimples é uma classe do tipo ProfessorDoutor que é derivada  da classe base Professor
@@ -37,7 +39,31 @@ namespace Heranca_e_Polimorfismo
             herancaMultiplaProfessorOrientador.NomeDoutorado = "Segurança"; //Herança da classe Heranca.Multipla.ProfessorDoutor
             herancaMultiplaProfessorOrientador.CPF = "100.200.300-88"; //Herança da classe Heranca.Multipla.ProfessorDoutor
             herancaMultiplaProfessorOrientador.SalaOrientacao = "Sala - 02"; // atributo da classe  Heranca.Multipla.ProfessorOrientador
-            //vemos que existe a possibilidade de atribuirmos um comportamento múltiplo para a classe Heranca.Multipla.ProfessorOrientador
+                                                                             //vemos que existe a possibilidade de atribuirmos um comportamento múltiplo para a classe Heranca.Multipla.ProfessorOrientador]
+
+            //Polimorfismo - herança
+            Pessoa pessoa = new Pessoa();
+            InformarKmPercorrido(pessoa);
+            Polimorfismo.Heranca.Professor professor = new Polimorfismo.Heranca.Professor();
+            InformarKmPercorrido(professor);
+            Polimorfismo.Heranca.Aluno aluno = new Polimorfismo.Heranca.Aluno();
+            InformarKmPercorrido(aluno);
+            Polimorfismo.Heranca.Diretor diretor = new Diretor();
+            InformarKmPercorrido(diretor);
+
+            //Polimorfismo - sobrecarga
+            Polimorfismo.Sobrecarga.Professor professorSobrecarga = new Polimorfismo.Sobrecarga.Professor();
+            string origemDestino = professorSobrecarga.Locomover("Casa", "Trabalho");
+            int resultado = professorSobrecarga.Locomover(DateTime.Now);
+            resultado = professorSobrecarga.Locomover(10, 8);
+            resultado = professorSobrecarga.Locomover(300);
+            string destino = professorSobrecarga.Locomover("Trabalho");
+            resultado = professorSobrecarga.Locomover();
+
+        }
+        internal static void InformarKmPercorrido(Pessoa pessoa)
+        {
+            Console.WriteLine(@$"{pessoa.GetType().Name} -> {pessoa.Locomover()}");
         }
     }
 }
