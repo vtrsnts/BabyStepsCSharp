@@ -13,6 +13,7 @@ namespace Tipos_e_Variaveis.Classe
     // podem ter atributos, propriedades, métodos 
     internal class Pessoa : IPessoa
     {
+        public int Id { get; set; }
         public string Nome { get; set; }
         public int Idade { get; set; }
         public Mes MesNascimento { get; set; }

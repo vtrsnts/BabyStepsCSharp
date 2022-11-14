@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using Tipos_e_Variaveis.Classe;
 using Tipos_e_Variaveis.Enum;
+using Tipos_e_Variaveis.Extension;
 using Tipos_e_Variaveis.Interface;
 using Tipos_e_Variaveis.Static;
 using Tipos_e_Variaveis.Struct;
@@ -39,24 +40,24 @@ namespace Tipos
             decimal preco = 10.2m;
             bool stAtivo = true;
 
-           //Tipos de valor enum:
-           //   São variaveis constantes representadas por um enumerável
+            //Tipos de valor enum:
+            //   São variaveis constantes representadas por um enumerável
 
             var mes = Mes.Abril;
-           
-           //Tipos de valor struct:
-           //   São semelhantes a classe de objetos, porém existem as seguintes diferenças:
-           //   Não há herança em struct
-           //   É passada por cópia e não referência
+
+            //Tipos de valor struct:
+            //   São semelhantes a classe de objetos, porém existem as seguintes diferenças:
+            //   Não há herança em struct
+            //   É passada por cópia e não referência
 
             ExemploStruct exemploStruct = new ExemploStruct();
             exemploStruct.Calcular();
             exemploStruct.Origem = "Teste";
 
-           //Tipos de valor nullable:
-           //   Possibilita o uso de nulo em tipos que não permitem valores nulos (tipos primitivos)
-           //   Podemos utilizar o Nullable em tipos que assumem valores default porém não queremos esse tipo 
-            
+            //Tipos de valor nullable:
+            //   Possibilita o uso de nulo em tipos que não permitem valores nulos (tipos primitivos)
+            //   Podemos utilizar o Nullable em tipos que assumem valores default porém não queremos esse tipo 
+
             int? nota = null; // default do tipo inteiro seria zero como declaramos que ele é um valor nullable conseguimos fazer uma atribuição nula de um tipo int 
             if (!nota.HasValue)
                 nota = 10;
@@ -86,17 +87,17 @@ namespace Tipos
 
             //Tipo de referência classe:
             //  Usamos para representar um domínio do contexto da aplicação para atribuição de valores ou funções que realizam processamento da informação
-            
+
             Pessoa pessoa = new Pessoa();
             pessoa.Nome = "John Doe";
             pessoa.Idade = 20;
             pessoa.MesNascimento = Mes.Outubro;
             pessoa.DiaNascimento = 05;
-           
+
             //Tipo de referência interface:
             //  Utilizado para definirmos contrato para uma classe ou struct
-          
-            IPessoa aluno = new Aluno(new DateTime(2000,11,5));
+
+            IPessoa aluno = new Aluno(new DateTime(2000, 11, 5));
             VerificarAniversario(pessoa);
             VerificarAniversario(aluno);
             //Tipo de referência array:
@@ -121,15 +122,15 @@ namespace Tipos
             //  Necessário atenção ao manipular pois há possibilidade de null ou mudanças de tipo podendo gerar erros em tempo de execução
             //  Podemos usar o tipo dynamic ao serializar dados retornados de um json(Api) ou arquivos externos sem a necessidade de criarmos a escrita das classes em nossa aplicação.
 
-            
+
             dynamic exemploDynamic = 100; //definindo tipo inteiro para o tipo dynamic
             exemploDynamic = "uhuuuu mudamos para tipo string";
-            
+
             exemploDynamic = false; //definindo tipo boolean
-             
+
             exemploDynamic = pessoa; // fazendo referência ao objeto pessoa
 
-             
+
             string nomePessoa = exemploDynamic.Nome;//acessando o atributo nome
             try
             {
@@ -175,7 +176,7 @@ namespace Tipos
             int qtdProduto = 25;// nesse momento a alocação de armazenamento na Stack contendo o seu valor;
             new Pessoa();// nesse momento temos alocação de memória Heap com os atributos em default. Fator importante é que não temos na stack um ponteiro para esse endereço na Heap ou seja temos uma informação em memória sem referência.
             Pessoa p; //Nesse momento temos alocação de armazenamento na Stack mas não há referência, não há um ponteiro na Heap. 
-            p= new Pessoa(); // Nesse momento estamos criando uma alocação de memória Heap com os atributos em default e atribuindo sua referência a memória Stack na variável p.
+            p = new Pessoa(); // Nesse momento estamos criando uma alocação de memória Heap com os atributos em default e atribuindo sua referência a memória Stack na variável p.
             p.Nome = "Jarvis"; // Nesse momento estamos manipulando a informação na memória Heap.
 
             //Criando variáveis a partir de variáveis existentes 
@@ -186,18 +187,27 @@ namespace Tipos
             pAdmin.Nome = "Jarvis Evolution"; // nesse momento estamos atribuindo um novo valor nome para a Heap por termos na Stack duas variáveis apontando para a mesma Heap o valor será atualizado para as duas variáveis.
 
             p = null;// nesse momento estamos apagando o identificador (ponteiro) Heap  existente na memória Stack! Memória Heap continua com a informação da instância gerada!  
-            pAdmin.Nome ="Jarvis";// Mesmo atribuindo nulo a variável p não afeta a variavel pAdimn pois a mesma contem o ponteiro para memória Heap sendo assim continua com as informações da instância.
+            pAdmin.Nome = "Jarvis";// Mesmo atribuindo nulo a variável p não afeta a variavel pAdimn pois a mesma contem o ponteiro para memória Heap sendo assim continua com as informações da instância.
 
 
-          
+            //Extension utilizamos para extender/adicionar métodos a uma classe através de uma outra classe
+            //para usarmos basta adicionarmos o namespace que o método de extensão estará disponível 
+            //devemos ter cuidado ao criar métodos de extensão pois com o uso inadequado pode acabar quebrando os padrões de projeto.
+            Aluno alExtension = new Aluno(DateTime.Now);// criando uma nova instância de aluno
+            alExtension.Validar();// chamando o método Validar contido na classe estática FundamentosExtension Método Validar(this Aluno aluno) 
+            FundamentosExtension.Validar(alExtension);//chamando o método Validar de forma direta na classe estática[NÂO USE ASSIM], funciona mas o objetivo da extension é disponibilizar para classe, só exemplificando que funciona.
+            pessoa.Validar("John");// chamando o método Validar contido na classe estática FundamentosExtension Método Validar(this Pessoa  pessoa, string nome)
 
+
+
+         
         }
 
         //Método com uso de interface possibilita a utilização por todas as classes que tem a interface IPessoa com essa estrutura possibilitamos o desacoplamento de código.
 
-        internal static void VerificarAniversario(IPessoa pessoa) 
+        internal static void VerificarAniversario(IPessoa pessoa)
         {
             pessoa.ComemorarAniversario();
         }
-    }  
+    }
 }
