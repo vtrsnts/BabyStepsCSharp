@@ -1,8 +1,10 @@
 ﻿using System.Drawing;
+using Tipos_e_Variaveis.AnonymousFunction;
 using Tipos_e_Variaveis.Classe;
 using Tipos_e_Variaveis.Enum;
 using Tipos_e_Variaveis.Extension;
 using Tipos_e_Variaveis.Interface;
+using Tipos_e_Variaveis.ListArray;
 using Tipos_e_Variaveis.Static;
 using Tipos_e_Variaveis.Struct;
 
@@ -110,8 +112,8 @@ namespace Tipos
             //  Declaração de um ponteiro de forma externa através de uma assinatura de método.
             //  Muito utilizado quando precisamos passar o controle, responsabilidade de algo, para algo externo que a classe não tem conhecimento de como fazer.
             //  Uso bastante comum em aplicações que utilizam eventos, UserControls, onde temos o uso de componentes. 
-            ExemploDelegate exemploDelegatePessoa = pessoa.EnviarMSG;
-            ExemploDelegate exemploDelegateAluno = aluno.Hello;
+            ExemploDelegate exemploDelegatePessoa = pessoa.Ola;
+            ExemploDelegate exemploDelegateAluno = aluno.Ola;
 
             exemploDelegatePessoa("Delegate para classe Pessoa");
             exemploDelegateAluno("Delegate para classe Aluno");
@@ -198,9 +200,18 @@ namespace Tipos
             FundamentosExtension.Validar(alExtension);//chamando o método Validar de forma direta na classe estática[NÂO USE ASSIM], funciona mas o objetivo da extension é disponibilizar para classe, só exemplificando que funciona.
             pessoa.Validar("John");// chamando o método Validar contido na classe estática FundamentosExtension Método Validar(this Pessoa  pessoa, string nome)
 
+            //Lista usamos para agrupar dados de um mesmo tipo o framework nos dá ferramentas para realizar comportamentos de filtro, ordenação, interação e outros comportamentos. 
+            ExemploLista exemploLista = new ExemploLista();
+            exemploLista.FiltrarAluno(20, "A");
+            exemploLista.OrdernarListaInteiro();
+
+            ExemploAF exemploAF = new ExemploAF();
+            Console.WriteLine(exemploAF.HelloFunc("HELLO"));
+            exemploAF.HelloAction("hi");
+            Console.WriteLine(exemploAF.HelloPredicate("bye!"));
 
 
-         
+
         }
 
         //Método com uso de interface possibilita a utilização por todas as classes que tem a interface IPessoa com essa estrutura possibilitamos o desacoplamento de código.

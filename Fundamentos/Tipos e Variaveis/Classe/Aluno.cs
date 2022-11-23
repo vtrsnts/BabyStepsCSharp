@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Tipos_e_Variaveis.Interface;
 
 namespace Tipos_e_Variaveis.Classe
@@ -17,6 +18,8 @@ namespace Tipos_e_Variaveis.Classe
         public int Idade { get; private set; }
 
         public DateTime Aniversario { get; set; }
+        public string Nome { get;  set; }
+      
         public void ComemorarAniversario()
         {
             DateTime hoje = DateTime.Now;
@@ -25,9 +28,14 @@ namespace Tipos_e_Variaveis.Classe
             if (hoje.Month < Aniversario.Month || (hoje.Month == Aniversario.Month && hoje.Day < Aniversario.Day))
                 Idade--;
         }
-        public void Hello(string msg)
+
+        public void Ola(string msg)
         {
-          string hello =  @$"Olá, sou a classe Aluno! msg -> {msg}";
-        }       
+            Console.WriteLine(@$"Olá, sou a classe Aluno! msg -> {msg}");
+        }
+      
     }
+
+
+
 }

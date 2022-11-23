@@ -26,5 +26,12 @@ namespace Tipos_e_Variaveis.Extension
             //lógica de validação
             return true;
         }
+        public static void GerarNomeAleatorio(this IPessoa pessoa) 
+        {
+            Random random = new Random();
+            int tamanhoNome = random.Next(5, 15);
+            string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            pessoa.Nome =  new string(Enumerable.Repeat(chars, tamanhoNome).Select(s => s[random.Next(s.Length)]).ToArray());
+        }        
     }
 }

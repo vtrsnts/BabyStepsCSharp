@@ -18,16 +18,13 @@ namespace Tipos_e_Variaveis.Classe
         public int Idade { get; set; }
         public Mes MesNascimento { get; set; }
         public int DiaNascimento { get; set; }
+        public DateTime DataNascimento { get; set; }
         public void ComemorarAniversario()
         {
             if ((int)MesNascimento == DateTime.Now.Month && DiaNascimento == DateTime.Now.Day)
                 Idade++;
         }
-        public void Hello(string msg)
-        {
-            Console.WriteLine(@$"Olá, sou a classe Pessoa! msg -> {msg}");
-        }
-        public void EnviarMSG(string msg)
+        public void Ola(string msg)
         {
             Console.WriteLine(@$"Olá, sou a classe Pessoa! msg -> {msg}");
         }
