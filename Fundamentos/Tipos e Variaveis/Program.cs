@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using Tipos_e_Variaveis.AnonymousFunction;
+using Tipos_e_Variaveis.Async;
 using Tipos_e_Variaveis.Classe;
 using Tipos_e_Variaveis.Enum;
 using Tipos_e_Variaveis.Extension;
@@ -209,8 +210,24 @@ namespace Tipos
             Console.WriteLine(exemploAF.HelloFunc("HELLO"));
             exemploAF.HelloAction("hi");
             Console.WriteLine(exemploAF.HelloPredicate("bye!"));
+          
+            var processo = Task.Run(async () =>
+              {
+                  for (int i = 0; i < 10; i++)
+                  {
+                      Console.Write("Entrando no método async -> ");
+                      await ExemploAsync.ChamadaAsync();                     
+                  }
+              });
 
 
+            for (int i = 0; i < 10; i++)
+            {
+                ExemploAsync.ChamadaNaoAsync();
+            }
+
+            processo.Wait();
+            Console.WriteLine("Fim");
 
         }
 
@@ -220,5 +237,6 @@ namespace Tipos
         {
             pessoa.ComemorarAniversario();
         }
+       
     }
 }
