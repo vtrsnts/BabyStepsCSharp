@@ -218,13 +218,11 @@ namespace Tipos
                       Console.Write("Entrando no método async -> ");
                       await ExemploAsync.ChamadaAsync();                     
                   }
-              });          
+              });
 
-            for (int i = 0; i < 10; i++)
-            {
-                Thread.Sleep(TimeSpan.FromMilliseconds(400));
-                ExemploAsync.ChamadaNaoAsync();
-            }
+            ExemploAsync.ListaParalela(exemploLista.ListaAluno);
+            ExemploAsync.ChamadaNaoAsync();
+            
 
             processo.Wait();
             Console.WriteLine("Fim");
